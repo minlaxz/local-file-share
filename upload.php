@@ -60,7 +60,7 @@ if ($_FILES["fileToUpload"]["tmp_name"] ==NULL){
         $uploadOk = 0;
     }
     echo" Refreshing in 3 seconds.";
-    header("Refresh:30; url=index.html");
+    header("Refresh:3; url=index.html");
 }
 }
 ?>
