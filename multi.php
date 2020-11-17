@@ -19,6 +19,6 @@ if(isset($_POST["submit"])) {
     }
   }
   echo" Refreshing in 3 seconds.";
-  header("Refresh:3; url=index.html");
+  header("Refresh: 3; url=index.php");
 }
 ?>
