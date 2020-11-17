@@ -49,7 +49,7 @@
    <br><br><br><br>
 
    <div id='singleImg' class="container text-center">
-      <form action="upload.php" method="post" enctype="multipart/form-data" id="a">
+      <form action="single.php" method="post" enctype="multipart/form-data" id="a">
          <label for="a" class="text-white">One-File Sharing</label>
          <input name="fileToUpload" type="file" multiple="multiple" class="btn btn-dark filepond" id="fileToUpload"
             accept="image/jpg">
@@ -59,7 +59,7 @@
    </div>
 
    <div id='multiFile' class="container text-center">
-      <form action="multiupload.php" method="post" enctype="multipart/form-data">
+      <form action="multi.php" method="post" enctype="multipart/form-data">
          <label for="filesToUpload" class="text-white">Multifile Sharing</label>
          <input name="upload[]" type="file" multiple="multiple" class="btn btn-dark filepond" id="filesToUpload"
             accept="image/jpg">
