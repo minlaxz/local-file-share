@@ -1,24 +1,41 @@
-<?php
-$files = array_filter($_FILES['upload']['name']); //something like that to be used before processing files.
+<!DOCTYPE html>
+<html lang="en">
 
-if(isset($_POST["submit"])) { 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing</title>
+</head>
 
-  $total = count($_FILES['upload']['name']);
+<body>
+  <?php
+  $files = array_filter($_FILES['upload']['name']); //something like that to be used before processing files.
 
-  for( $i=0 ; $i < $total ; $i++ ) {
+  if (isset($_POST["submit"])) {
 
-    $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
+    $total = count($_FILES['upload']['name']);
 
-    if ($tmpFilePath != ""){
+    for ($i = 0; $i < $total; $i++) {
 
-      $newFilePath = "./uploads/uploadFiles/" . $_FILES['upload']['name'][$i];
+      $tmpFilePath = $_FILES['upload']['tmp_name'][$i];
 
-      if(move_uploaded_file($tmpFilePath, $newFilePath)) {
-        echo "Uploaded your files to server successfully.\n";
+      if ($tmpFilePath != "") {
+
+        $newFilePath = "./uploads/uploadFiles/" . $_FILES['upload']['name'][$i];
+
+        if (move_uploaded_file($tmpFilePath, $newFilePath)) {
+          echo "Uploaded your files to server successfully.\n";
+        }
       }
     }
+    echo " Refreshing in 3 seconds.";
   }
-  echo" Refreshing in 3 seconds.";
-  header("Refresh: 3; url=index.php");
-}
-?>
+  ?>
+  <script>
+    setTimeout(() => {
+      window.location.replace('/');
+    }, 3000);
+  </script>
+</body>
+
+</html>
