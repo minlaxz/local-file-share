@@ -25,7 +25,13 @@
 
         if ($_FILES["fileToUpload"]["tmp_name"] == NULL) {
             echo "NULL";
-            header("Refresh:1; url=index.html");
+    ?>
+            <script>
+                setTimeout(() => {
+                    window.location.replace('/');
+                }, 3000);
+            </script>
+    <?php
         } else {
             echo "Not Null";
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
@@ -80,4 +86,5 @@
         }, 3000);
     </script>
 </body>
+
 </html>
